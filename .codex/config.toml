@@ -1,0 +1,8 @@
+# Codex CLI 프로젝트 설정
+# 전역 ~/.codex/config.toml을 프로젝트 레벨에서 재정의합니다.
+# 가장 가까운 디렉터리의 config.toml이 우선 적용됩니다.
+
+# 예시:
+# model = "codex-mini-latest"
+# project_doc_max_bytes = 32768
+

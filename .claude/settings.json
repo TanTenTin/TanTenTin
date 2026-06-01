@@ -10,7 +10,17 @@
   "permissions": {
     "defaultMode": "acceptEdits",
     "allow": [],
-    "deny": [],
+    "deny": [
+      "Read(.codex/**)",
+      "Edit(.codex/**)",
+      "Write(.codex/**)",
+      "Read(AGENTS.md)",
+      "Edit(AGENTS.md)",
+      "Write(AGENTS.md)",
+      "Read(AGENTS.override.md)",
+      "Edit(AGENTS.override.md)",
+      "Write(AGENTS.override.md)"
+    ],
     "ask": []
   },
   "env": {

@@ -9,7 +9,19 @@
   "defaultShell": "powershell",
   "permissions": {
     "defaultMode": "acceptEdits",
-    "allow": [],
+    "allow": [
+      "PowerShell(git status)",
+      "PowerShell(git diff*)",
+      "PowerShell(git log*)",
+      "PowerShell(git branch)",
+      "PowerShell(git branch -a)",
+      "PowerShell(git branch -v)",
+      "PowerShell(npm run *)",
+      "PowerShell(npx *)",
+      "PowerShell(Get-ChildItem*)",
+      "PowerShell(ls*)",
+      "PowerShell(Get-Content *)"
+    ],
     "deny": [
       "Read(.codex/**)",
       "Edit(.codex/**)",
@@ -19,9 +31,43 @@
       "Write(AGENTS.md)",
       "Read(AGENTS.override.md)",
       "Edit(AGENTS.override.md)",
-      "Write(AGENTS.override.md)"
+      "Write(AGENTS.override.md)",
+      "Read(.env)",
+      "Edit(.env)",
+      "Write(.env)",
+      "Read(.env.*)",
+      "Edit(.env.*)",
+      "Write(.env.*)",
+      "Read(**/.env)",
+      "Edit(**/.env)",
+      "Write(**/.env)",
+      "Read(**/.env.*)",
+      "Edit(**/.env.*)",
+      "Write(**/.env.*)",
+      "Read(**/*.pem)",
+      "Edit(**/*.pem)",
+      "Write(**/*.pem)",
+      "Read(**/*.key)",
+      "Edit(**/*.key)",
+      "Write(**/*.key)",
+      "Read(**/*.p12)",
+      "Edit(**/*.p12)",
+      "Write(**/*.p12)",
+      "Read(**/secrets.*)",
+      "Edit(**/secrets.*)",
+      "Write(**/secrets.*)"
     ],
-    "ask": []
+    "ask": [
+      "PowerShell(git push*)",
+      "PowerShell(git reset*)",
+      "PowerShell(git rebase*)",
+      "PowerShell(git checkout -- *)",
+      "PowerShell(git restore*)",
+      "PowerShell(git clean*)",
+      "PowerShell(Remove-Item*)",
+      "PowerShell(npm publish*)",
+      "PowerShell(git branch -D*)"
+    ]
   },
   "env": {
     "CLAUDE_CODE_USE_POWERSHELL_TOOL": "1"

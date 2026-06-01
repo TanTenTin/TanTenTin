@@ -1,0 +1,69 @@
+# Claude 작업 지침
+
+## 작업 스타일
+
+- 지시가 명확하면 설명 없이 바로 작업한다.
+- 지시가 애매하거나 해석이 여러 갈래일 경우, 반드시 먼저 질문하고 확인 후 진행한다. 추측하지 않는다.
+- 응답은 설명을 충분히 포함해서 상세하게 작성한다.
+
+## 환경
+
+- **OS**: Windows
+- **터미널**: PowerShell
+- 셸 명령어 작성 시 PowerShell 문법을 기준으로 한다. Bash 문법(`&&`, `$VAR` 등)을 사용하지 않는다.
+
+## 기술 스택
+
+- **언어 (선호)**: TypeScript, Python
+- **언어 (사용 가능)**: PHP, C++, Java
+- **프레임워크**: Next.js, Express, FastAPI
+- **스타일링**: Tailwind CSS, CSS Modules
+- **ORM / DB**: Prisma, TypeORM, MySQL, Elasticsearch
+- **인프라**: Vercel, AWS
+
+## 코딩 컨벤션
+
+### 공통
+- 주석은 충분히 작성한다. 코드의 의도와 동작을 명확히 설명한다.
+- `any` 타입 사용을 금지한다.
+- 타입 정의는 `type alias` 대신 `interface`를 사용한다.
+- 에러 처리는 꼭 필요한 곳에만 작성한다. 불필요한 방어 코드를 남발하지 않는다.
+
+### TypeScript / JavaScript
+- 함수 선언은 `function` 키워드를 사용한다. 화살표 함수는 콜백이나 인라인 표현에 한정한다.
+- 파일명: `camelCase`
+- 변수 / 함수명: `camelCase`
+- 클래스 / 컴포넌트 / 인터페이스명: `PascalCase`
+- 상수: `UPPER_SNAKE_CASE`
+
+### Python
+- 함수 / 변수명: `snake_case`
+- 클래스명: `PascalCase`
+- 상수: `UPPER_SNAKE_CASE`
+- 파일명: `snake_case`
+
+## Git 컨벤션
+
+Conventional Commits 형식을 따른다. 커밋 메시지 본문은 한국어로 작성한다.
+
+```
+<type>: <한국어 설명>
+```
+
+**주요 타입**
+- `feat`: 새로운 기능
+- `fix`: 버그 수정
+- `refactor`: 기능 변경 없는 코드 개선
+- `chore`: 빌드, 설정 등 기타 작업
+- `docs`: 문서 변경
+- `test`: 테스트 추가 / 수정
+- `style`: 코드 포맷 / 스타일 변경
+
+## 테스트
+
+- 테스트는 필요할 때만 작성한다. 모든 코드에 테스트를 강제하지 않는다.
+
+## 문서화
+
+- 인라인 docs보다 README 등 별개의 문서 파일을 우선한다.
+- 코드 내 설명이 필요한 경우 주석으로 작성하고, 구조/사용법 설명은 별도 파일에 작성한다.

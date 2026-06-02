@@ -23,24 +23,8 @@
 
 ## 코딩 컨벤션
 
-### 공통
 - 주석은 충분히 작성한다. 코드의 의도와 동작을 명확히 설명한다.
-- `any` 타입 사용을 금지한다.
-- 타입 정의는 `type alias` 대신 `interface`를 사용한다.
 - 에러 처리는 꼭 필요한 곳에만 작성한다. 불필요한 방어 코드를 남발하지 않는다.
-
-### TypeScript / JavaScript
-- 함수 선언은 `function` 키워드를 사용한다. 화살표 함수는 콜백이나 인라인 표현에 한정한다.
-- 파일명: `camelCase`
-- 변수 / 함수명: `camelCase`
-- 클래스 / 컴포넌트 / 인터페이스명: `PascalCase`
-- 상수: `UPPER_SNAKE_CASE`
-
-### Python
-- 함수 / 변수명: `snake_case`
-- 클래스명: `PascalCase`
-- 상수: `UPPER_SNAKE_CASE`
-- 파일명: `snake_case`
 
 ## Git 컨벤션
 

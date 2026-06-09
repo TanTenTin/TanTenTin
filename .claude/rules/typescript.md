@@ -28,6 +28,22 @@ type Direction = typeof Direction[keyof typeof Direction];
 - 재사용 가능한 로직은 Generic으로 추상화한다.
 - `Partial`, `Pick`, `Omit`, `Required`, `Readonly` 등 내장 Utility Types를 적극 활용한다.
 
+## 변수 선언
+
+- `var` 사용을 금지한다. 변수는 반드시 `const` 또는 `let`으로 선언한다.
+- 재할당이 없는 변수는 `const`를 사용한다. `let`은 재할당이 명확히 필요한 경우에만 사용한다.
+
+```ts
+// Bad
+var count = 0;
+var name = 'Alice';
+
+// Good
+const name = 'Alice';
+let count = 0;
+count += 1;
+```
+
 ## 함수
 
 - 함수 선언은 `function` 키워드를 사용한다. 화살표 함수는 콜백이나 인라인 표현에 한정한다.

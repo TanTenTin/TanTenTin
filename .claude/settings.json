@@ -87,5 +87,6 @@
       "악마를 소환하는 중"
     ]
   },
-  "autoUpdatesChannel": "stable"
+  "autoUpdatesChannel": "stable",
+  "tui": "fullscreen"
 }

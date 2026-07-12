@@ -10,6 +10,9 @@
   "permissions": {
     "defaultMode": "acceptEdits",
     "allow": [
+      "Read(.env.example)",
+      "Write(.env.example)",
+      "Edit(.env.example)",
       "PowerShell(git status)",
       "PowerShell(git diff*)",
       "PowerShell(git log*)",

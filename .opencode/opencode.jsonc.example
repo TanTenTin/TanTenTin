@@ -1,0 +1,51 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // 기본 모델: 내 게이트웨이의 gemini-2.5-flash
+  "model": "tan-kim/gemini-2.5-flash",
+
+  // Claude Code 전용 문서(.claude/**, CLAUDE.md)는 OpenCode 인덱싱/워처 대상에서 제외
+  // 두 도구가 서로의 지시문서를 컨텍스트로 읽어 헷갈리지 않도록 하기 위함
+  "watcher": {
+    "ignore": [".claude", "CLAUDE.md", ".claude/**"]
+  },
+
+  "provider": {
+    // 내 LLM 게이트웨이 (llm.tan-kim.com) — OpenAI 호환 커스텀 provider
+    "tan-kim": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Tan-Kim LLM Gateway",
+      "options": {
+        "baseURL": "https://llm.tan-kim.com/v1",
+        // ▼▼▼ 이 따옴표 안만 게이트웨이 GATEWAY_API_KEY 실제 값으로 교체하세요 ▼▼▼
+        "apiKey": "YOUR_GATEWAY_API_KEY_HERE"
+      },
+      "models": {
+        // 게이트웨이가 요청 특성으로 모델을 자동 선택
+        "auto": {
+          "name": "Auto (게이트웨이 자동 선택)",
+          "tool_call": true,
+          "limit": { "context": 1000000, "output": 8192 }
+        },
+        "gemini-2.5-flash": {
+          "name": "Gemini 2.5 Flash",
+          "tool_call": true,
+          "limit": { "context": 1000000, "output": 8192 }
+        },
+        "gemini-2.5-flash-lite": {
+          "name": "Gemini 2.5 Flash Lite",
+          "tool_call": true,
+          "limit": { "context": 1000000, "output": 8192 }
+        },
+        // ── 로컬 Ollama (게이트웨이를 거쳐 원격 Oracle 서버의 Ollama 사용) ──
+        // 주: qwen3.6:27b는 registry엔 있으나 서버에 pull 안 돼 404 → 제외함.
+        //     서버에서 'ollama pull qwen3.6:27b' 한 뒤 추가하면 됨.
+        "ollama/qwen3:14b": {
+          "name": "Qwen3 14B (로컬/Ollama)",
+          "tool_call": true,
+          "limit": { "context": 32000, "output": 8192 }
+        }
+      }
+    }
+  }
+}
